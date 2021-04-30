@@ -1,0 +1,1 @@
+<h1>New Post Created {{ $post->post_title }}</h1>
