@@ -2,8 +2,6 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Post;
-use App\Http\Resources\PostCollection;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('posts', function() {
-	return new PostCollection(Post::with('author')->paginate(30));
-});
+Route::post('posts', [App\Http\Controllers\Resources\PostController::class, 'index']);

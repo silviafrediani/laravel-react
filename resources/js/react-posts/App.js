@@ -27,13 +27,13 @@ export default function App(props) {
 
 	useEffect(() => {
 		//console.log(opere.length);
-		fetch('http://localhost/api/posts?page=' + currentPage, {
+		fetch('http://localhost/api/posts?page=' + currentPage + '&term=' + newSearchTerm, {
 			method: 'post',
 			headers: {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify({ term: newSearchTerm ? newSearchTerm : '' })
+			//body: JSON.stringify({ term: newSearchTerm ? newSearchTerm : '' })
 		})
 		.then(response => response.json())
 		.then(results => {
@@ -41,7 +41,7 @@ export default function App(props) {
 			//console.log(results.meta);
 			//console.log(results.links);
 			setOpere(results.data);
-			setPagination(results.links);
+			setPagination( new Array( Math.round(results.meta.total/results.meta.per_page)) );
 			setLoading(false);
 		})
 		;

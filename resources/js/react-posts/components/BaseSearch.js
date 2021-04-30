@@ -5,6 +5,7 @@ export default function BaseSearch({ searchTerm, setSearchTerm, handleSearch, re
 	return (
 
 		<>
+			<small>(Search in post author and post title)</small>
 			<input type="text"
 				className="form-control"
 				name="testo_ricerca"

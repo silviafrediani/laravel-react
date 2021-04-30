@@ -190,15 +190,13 @@ function App(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     //console.log(opere.length);
-    fetch('http://localhost/api/posts?page=' + currentPage, {
+    fetch('http://localhost/api/posts?page=' + currentPage + '&term=' + newSearchTerm, {
       method: 'post',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        term: newSearchTerm ? newSearchTerm : ''
-      })
+      } //body: JSON.stringify({ term: newSearchTerm ? newSearchTerm : '' })
+
     }).then(function (response) {
       return response.json();
     }).then(function (results) {
@@ -206,7 +204,7 @@ function App(props) {
       //console.log(results.meta);
       //console.log(results.links);
       setOpere(results.data);
-      setPagination(results.links);
+      setPagination(new Array(Math.round(results.meta.total / results.meta.per_page)));
       setLoading(false);
     });
   }, [newSearchTerm, currentPage, route]);
@@ -305,43 +303,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 function AdvancedSearch(_ref) {
   var searchTerm = _ref.searchTerm,
       setSearchTerm = _ref.setSearchTerm,
       handleSearch = _ref.handleSearch,
       resetSearch = _ref.resetSearch;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-      type: "text",
-      className: "form-control",
-      name: "testo_ricerca",
-      value: searchTerm ? searchTerm : '',
-      onChange: function onChange(e) {
-        return setSearchTerm(e.target.value);
-      },
-      onKeyUp: function onKeyUp(e) {
-        if (e.key === 'Enter') {
-          handleSearch();
-        }
-      }
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-      className: "mt-2",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "btn btn-primary mr-2",
-        onClick: function onClick() {
-          return handleSearch();
-        },
-        children: "CERCA"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-        className: "btn btn-primary",
-        onClick: function onClick() {
-          return resetSearch();
-        },
-        children: "AZZERA"
-      })]
-    })]
-  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {});
 }
 
 /***/ }),
@@ -369,7 +336,9 @@ function BaseSearch(_ref) {
       handleSearch = _ref.handleSearch,
       resetSearch = _ref.resetSearch;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("small", {
+      children: "(Search in post author and post title)"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
       type: "text",
       className: "form-control",
       name: "testo_ricerca",
