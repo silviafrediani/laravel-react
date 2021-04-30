@@ -22,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('posts', function() {
 	return new PostCollection(Post::with('author')->paginate(30));
-} );
+});
