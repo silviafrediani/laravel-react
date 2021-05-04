@@ -1,7 +1,8 @@
 Navigate to the application directory and start Laravel Sail. Laravel Sail provides a simple command-line interface for interacting with Laravel's default Docker configuration:
 
+composer update
+composer install
 ./vendor/bin/sail up -d
-
 
 To see all docker containers running:
 docker ps -a
