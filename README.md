@@ -1,4 +1,4 @@
-Installing Composer Dependencies For Existing Applications
+<h2>Installing Composer Dependencies For Existing Applications</h2>
 
 If you are developing an application with a team, you may not be the one that initially creates the Laravel application. Therefore, none of the application's Composer dependencies, including Sail, will be installed after you clone the application's repository to your local computer.
 
@@ -11,7 +11,7 @@ docker run --rm \
     laravelsail/php80-composer:latest \
     composer install --ignore-platform-reqs
     
-
+<h2>Start Docker Containers</h2>
 Now navigate to the application directory and start Laravel Sail. Laravel Sail provides a simple command-line interface for interacting with Laravel's default Docker configuration (for more info on Laravel Sail see: https://laravel.com/docs/8.x/sail):
 
 ./vendor/bin/sail up -d
@@ -24,6 +24,7 @@ Copy the container id of sail-8.0/app image
 
 docker exec -it [id_container] /bin/bash
 
+<h2>Inside Sail Container</h2>
 Now you are inside container instance of sail-8.0/app image:
 
 su sail
