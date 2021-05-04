@@ -20,4 +20,5 @@ For more info on Laravel Sail see: https://laravel.com/docs/8.x/sail
 
 In Laravel it is very easy to integrate a React component thanks to the assets compilation system (mix): https://laravel.com/docs/8.x/mix#react
 
-See file webpack.mix.js into the project
+See file webpack.mix.js into the project 
+The react component is in the folder /resources/js/react-posts/
