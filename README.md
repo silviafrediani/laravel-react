@@ -17,7 +17,6 @@ Now navigate to the application directory and start Laravel Sail. Laravel Sail p
 ./vendor/bin/sail up -d
 
 To see all docker containers running:
-
 docker ps -a
 
 Copy the container id of sail-8.0/app image
