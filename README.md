@@ -11,7 +11,7 @@ docker run --rm \
     laravelsail/php80-composer:latest \
     composer install --ignore-platform-reqs
     
-<h2>Start Docker Containers</h2>
+<h2>Start all Docker Containers</h2>
 Now navigate to the application directory and start Laravel Sail. Laravel Sail provides a simple command-line interface for interacting with Laravel's default Docker configuration (for more info on Laravel Sail see: https://laravel.com/docs/8.x/sail):
 
 ./vendor/bin/sail up -d
