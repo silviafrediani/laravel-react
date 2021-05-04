@@ -26,7 +26,13 @@ su sail
 
 Now you can run all php artisan and npm command
 
+php artisan migrate:fresh --seed
+
+npm install && npm run dev
+
+
 For more info on Laravel Sail see: https://laravel.com/docs/8.x/sail
+
 
 In Laravel it is very easy to integrate a React component thanks to the assets compilation system (mix): https://laravel.com/docs/8.x/mix#react
 
