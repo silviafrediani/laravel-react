@@ -7,6 +7,7 @@ composer install
 ./vendor/bin/sail up -d
 
 To see all docker containers running:
+
 docker ps -a
 
 Copy the container id of sail-8.0/app image
@@ -14,6 +15,7 @@ Copy the container id of sail-8.0/app image
 docker exec -it [id_container] /bin/bash
 
 Now you are inside container instance of sail-8.0/app image:
+
 su sail
 
 Now you can run all php artisan and npm command
