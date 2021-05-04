@@ -14,25 +14,25 @@ You may install the application's dependencies by navigating to the application'
 <h2>Start all Docker Containers</h2>
 Now navigate to the application directory and start Laravel Sail. Laravel Sail provides a simple command-line interface for interacting with Laravel's default Docker configuration (for more info on Laravel Sail see: https://laravel.com/docs/8.x/sail):
 
-./vendor/bin/sail up -d
+<code>./vendor/bin/sail up -d</code>
 
 To see all docker containers running:
-docker ps -a
+<code>docker ps -a</code>
 
 Copy the container id of sail-8.0/app image
 
-docker exec -it [id_container] /bin/bash
+<code>docker exec -it [id_container] /bin/bash</code>
 
 <h2>Inside Sail Container</h2>
 Now you are inside container instance of sail-8.0/app image:
 
-su sail
+<code>su sail</code>
 
 Now you can run all php artisan and npm command
 
-php artisan migrate --seed
+<code>php artisan migrate --seed</code>
 
-npm install && npm run dev
+<code>npm install && npm run dev</code>
 
 <h2>Laravel & React</h2>
 In Laravel it is very easy to integrate a React component thanks to the assets compilation system (mix): https://laravel.com/docs/8.x/mix#react
