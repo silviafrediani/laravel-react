@@ -1,3 +1,7 @@
+Installing Composer Dependencies For Existing Applications
+
+If you are developing an application with a team, you may not be the one that initially creates the Laravel application. Therefore, none of the application's Composer dependencies, including Sail, will be installed after you clone the application's repository to your local computer.
+
 You may install the application's dependencies by navigating to the application's directory and executing the following command. This command uses a small Docker container containing PHP and Composer to install the application's dependencies:
 
 docker run --rm \
@@ -8,7 +12,7 @@ docker run --rm \
     composer install --ignore-platform-reqs
     
 
-Navigate to the application directory and start Laravel Sail. Laravel Sail provides a simple command-line interface for interacting with Laravel's default Docker configuration:
+Now navigate to the application directory and start Laravel Sail. Laravel Sail provides a simple command-line interface for interacting with Laravel's default Docker configuration (for more info on Laravel Sail see: https://laravel.com/docs/8.x/sail):
 
 ./vendor/bin/sail up -d
 
@@ -26,14 +30,11 @@ su sail
 
 Now you can run all php artisan and npm command
 
-php artisan migrate:fresh --seed
+php artisan migrate --seed
 
 npm install && npm run dev
 
-
-For more info on Laravel Sail see: https://laravel.com/docs/8.x/sail
-
-
+<h2>Laravel & React</h2>
 In Laravel it is very easy to integrate a React component thanks to the assets compilation system (mix): https://laravel.com/docs/8.x/mix#react
 
 See file webpack.mix.js into the project. 
